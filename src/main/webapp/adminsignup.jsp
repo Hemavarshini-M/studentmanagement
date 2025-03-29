@@ -33,7 +33,7 @@
 		</center>
 		<br>
 
-		<form action="signup" method="post">
+		<form action="adminlogin.jsp" method="post">
 			<table>
 				<tr>
 					<td>Id</td>
