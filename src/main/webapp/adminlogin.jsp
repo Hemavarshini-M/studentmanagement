@@ -6,61 +6,120 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+body {
+	background-image:
+		url("https://t4.ftcdn.net/jpg/02/34/44/19/360_F_234441954_UBLcJTnihXXonXiR0kvToWLAm4OeoL89.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	height: 100vh;
+}
+
 #div1 {
-	border: 1px solid black;
-	background-color:lightblue;
+	border: 3px solid black;
 	text-decoration: none;
-	color: black;
+	color: white;
 	padding: 20px;
 	position: relative;
-	top:100px;
-	left:400px;
-	width:350px;
-
+	top: 100px;
+	left: 400px;
+	width: 350px;
+	opacity: .7;
+	box-shadow: 3px 3px 5px 5px silver;
+	
 }
 
 a {
-	border: 1px solid black;
-	background-color: gray;
+	border: 2px solid black;
+	background-color: maroon;
 	text-decoration: none;
-	color: black;
+	color: white;
 	padding: 5px;
 	position: relative;
 	top: 0px;
-	left: 80px;
+	left: 130px;
 }
 </style>
 </head>
 <body>
 	<div id="div1">
-		<center><h1>Admin Login</h1></center>
+		<center>
+			<h1 style="text-decoration: underline;">Admin Login</h1>
+		</center>
 		<br>
-			<form action="login" method="post">
-				<table>
-					<tr>
-						<td>Email</td>
-						<td><input type="text" name="email"></td>
-					</tr>
-					<tr>
-						<td>Password</td>
-						<td><input type="password" name="pass"></td>
-					</tr>
-					<tr>
-						<td><input type="submit"></td>
-					</tr>
-					<tr>
-						<td style="color:red">Not a User?</td>
-					</tr>
-					<tr>
-						<td><a href="adminsignup.jsp">Signup</a></td>
-					</tr>
+		<form action="adminlogin" method="post">
+			<table>
+				<tr>
+					<td>Email</td>
+					<td><input type="text" name="email" id="email"
+						required="required"></td>
+
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="2"><p style="display: none; color: red;"
+							id="errormsgemail">please enter the email!!</p></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="pass" id="pass"
+						required="required"></td>
+				</tr>
+				<tr>
+					
+					<td colspan="2"><p style="display: none; color: red;"
+							id="errormsgpass">please enter the password!!</p></td>
+				</tr>
+				<tr>
+					<td><input type="submit"></td>
+				</tr>
+				<tr>
+					<td style="color: red">Not a User?</td>
+				</tr>
+				<tr>
+					<td><a href="adminsignup.jsp">Signup</a></td>
+				</tr>
 
 
 
-				</table>
+			</table>
 
-			</form>
-		
+		</form>
+
+
 	</div>
+		
+		<script>
+		document.getElementById("email").addEventListener("input",()=>{
+			let errmsg=document.getElementById("errormsgemail");
+			if((email.value) == ""){
+				errmsg.style.display="block";
+			}
+			else{
+				errmsg.style.display="none";
+			}
+		},false);
+		document.getElementById("pass").addEventListener("input",()=>{
+			let errmsg=document.getElementById("errormsgpass");
+			if((pass.value) == ""){
+				errmsg.style.display="block";
+			}
+			else{
+				errmsg.style.display="none";
+			}
+		},false);
+		<%
+		String msg = (String) request.getAttribute("msg");
+		%>
+			
+		<%if (msg != null) {%>
+			alert("<%= msg %>");
+		<%if (msg.equals("Login Success")) {%>
+			window.location.href = "adminhome.jsp";
+		<%}%>
+			
+		<%}%>
+			
+		</script>
+
 </body>
 </html>
