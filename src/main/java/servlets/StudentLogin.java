@@ -22,11 +22,11 @@ public class StudentLogin extends HttpServlet {
 			if(s!=null) {
 				req.setAttribute("student", s);
 				req.setAttribute("msg", "Login Success!!");
-				req.getRequestDispatcher("studentlogin.jsp").forward(req, resp);
+				req.getRequestDispatcher("studentlogin.jsp").include(req, resp);
 			}
 			else {
-				req.setAttribute("msg", "Login Failed!!");
-				req.getRequestDispatcher("studentlogin.jsp").forward(req, resp);
+				req.setAttribute("msg", "Student is not exist!!");
+				req.getRequestDispatcher("studentlogin.jsp").include(req, resp);
 				
 			}
 		} catch (SQLException e) {

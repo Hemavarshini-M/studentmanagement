@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Student Management</title>
 </head>
 <style>
 body {
@@ -13,6 +13,8 @@ body {
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	height: 100vh;
+	display: grid;
+	place-content: center;
 }
 #div1 {
 	border: 1px solid black;
@@ -20,12 +22,9 @@ body {
 	text-decoration: none;
 	color: silver;
 	padding: 30px;
-	position: relative;
-	top: 100px;
-	left: 400px;
 	width: 350px;
 	opacity: .9;
-	box-shadow: 3px 3px 5px 5px silver;
+	box-shadow: 3px 3px 25px 10px silver;
 	
 }
 
@@ -78,9 +77,6 @@ body {
 	</div>
 	
 	<script>
-	
-		
-		/* let submit=document.getElementById("submit"); */
 		document.getElementById("cpwd").addEventListener("focusout",()=>{
 			let pwd=document.getElementById("pwd").value;
 			let cpwd=document.getElementById("cpwd").value;

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Student Management</title>
 <style>
 body {
 	background-image:
@@ -12,6 +12,8 @@ body {
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	height: 100vh;
+	display: grid;
+	place-content: center;
 }
 
 #div1 {
@@ -19,13 +21,9 @@ body {
 	text-decoration: none;
 	color: white;
 	padding: 20px;
-	position: relative;
-	top: 100px;
-	left: 400px;
 	width: 350px;
 	opacity: .7;
-	box-shadow: 3px 3px 5px 5px silver;
-	
+	box-shadow: 3px 3px 25px 10px silver;
 }
 
 a {
@@ -42,9 +40,9 @@ a {
 </head>
 <body>
 	<div id="div1">
-		<center>
-			<h1 style="text-decoration: underline;">Admin Login</h1>
-		</center>
+		<h1 style="text-decoration: underline; text-align: center;">Admin
+			Login</h1>
+
 		<br>
 		<form action="adminlogin" method="post">
 			<table>
@@ -65,7 +63,7 @@ a {
 						required="required"></td>
 				</tr>
 				<tr>
-					
+
 					<td colspan="2"><p style="display: none; color: red;"
 							id="errormsgpass">please enter the password!!</p></td>
 				</tr>
@@ -87,8 +85,8 @@ a {
 
 
 	</div>
-		
-		<script>
+
+	<script>
 		document.getElementById("email").addEventListener("input",()=>{
 			let errmsg=document.getElementById("errormsgemail");
 			if((email.value) == ""){
@@ -107,12 +105,10 @@ a {
 				errmsg.style.display="none";
 			}
 		},false);
-		<%
-		String msg = (String) request.getAttribute("msg");
-		%>
+		<%String msg = (String) request.getAttribute("msg");%>
 			
 		<%if (msg != null) {%>
-			alert("<%= msg %>");
+			alert("<%=msg%>");
 		<%if (msg.equals("Login Success")) {%>
 			window.location.href = "adminhome.jsp";
 		<%}%>

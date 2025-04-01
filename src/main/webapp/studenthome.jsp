@@ -52,6 +52,22 @@ th {
 	top: 20px;
 	left: 50px;
 }
+
+#divlogout {
+	background-color: olive;
+	border: 2px solid black;
+	position: relative;
+	top: 40px;
+	left: 250px;
+	width: 60px;
+	padding: 10px;
+}
+
+#divlogout a {
+	margin-left: 7px;
+	text-decoration: none;
+	color: navy;
+}
 </style>
 </head>
 <body>
@@ -81,7 +97,12 @@ th {
 
 			</table>
 		</div>
+		<div id="divlogout">
+			<a href="index.jsp">Logout</a>
+
+		</div>
 	</div>
+	
 
 </body>
 </html>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Student Management</title>
 </head>
 <style>
 body {
@@ -13,18 +13,17 @@ body {
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	height: 100vh;
+	display: grid;
+	place-content: center;
 }
 
 #div {
 	border: 3px solid black;
 	color: white;
 	padding: 20px;
-	position: relative;
-	top: 50px;
-	left: 300px;
 	width: 500px;
 	height: 300px;
-	box-shadow: 3px 3px 5px 5px silver;
+	box-shadow: 3px 3px 20px 8px silver;
 	opacity: .9;
 }
 
